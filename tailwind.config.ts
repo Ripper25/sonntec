@@ -76,7 +76,8 @@ export default {
         },
         "spin-burst": {
           "0%, 100%": { transform: "rotate(0deg)" },
-          "20%": { transform: "rotate(2880deg)" }, // 8 full rotations in first 20% of time
+          "5%": { transform: "rotate(2880deg)" }, // 8 rotations in first 5% of time
+          "5.1%, 99.9%": { transform: "rotate(0deg)" } // Complete stop for the rest
         },
         "glow": {
           "0%, 100%": {
