@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
 export default function Navigation() {
@@ -96,24 +95,40 @@ export default function Navigation() {
           Sonnteck & Projects
         </Button>
 
+        {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-2">
           <NavLinks />
         </div>
 
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
+        {/* Mobile Navigation */}
+        <div className="md:hidden">
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            className="h-8 w-8 p-0"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
               <Menu className="h-5 w-5" />
-              <span className="sr-only">Open menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent>
-            <SheetTitle className="tracking-tight">Navigation Menu</SheetTitle>
-            <div className="flex flex-col space-y-4 mt-8">
-              <NavLinks />
-            </div>
-          </SheetContent>
-        </Sheet>
+            )}
+            <span className="sr-only">Toggle menu</span>
+          </Button>
+        </div>
+      </div>
+
+      {/* Mobile Navigation Dropdown */}
+      <div 
+        className={cn(
+          "md:hidden absolute top-14 left-0 right-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b shadow-sm",
+          "transition-all duration-300 transform origin-top",
+          isOpen ? "opacity-100 scale-y-100" : "opacity-0 scale-y-0 pointer-events-none"
+        )}
+      >
+        <div className="container mx-auto px-4 py-2 flex flex-col space-y-1">
+          <NavLinks />
+        </div>
       </div>
     </nav>
   );
