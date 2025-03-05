@@ -92,7 +92,7 @@ export default function Navigation() {
           onClick={() => scrollToSection('top')}
         >
           <div className={cn(
-            "rounded-full p-2 flex items-center justify-center transition-colors animate-spin-slow animate-glow",
+            "rounded-full p-2 flex items-center justify-center transition-colors animate-spin-burst animate-glow",
             isScrolled ? "bg-primary text-white" : "bg-white text-primary"
           )}>
             <Zap className="h-6 w-6" />
