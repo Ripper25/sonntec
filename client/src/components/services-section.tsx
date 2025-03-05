@@ -5,25 +5,25 @@ import { Zap, Settings, Home, Shield } from "lucide-react";
 
 const services = [
   {
-    icon: <Zap className="h-8 w-8" />,
+    icon: <Zap className="h-6 w-6" />,
     title: "High Voltage Solutions",
     description: "Installation and maintenance of electrical substations and power lines",
     details: "Specializing in high voltage electrical infrastructure including power line construction, substation maintenance, and emergency repair services. Our certified team ensures safe and reliable power distribution."
   },
   {
-    icon: <Settings className="h-8 w-8" />,
+    icon: <Settings className="h-6 w-6" />,
     title: "Industrial Services",
     description: "Fixed plant maintenance and on-site project management",
     details: "Comprehensive industrial electrical solutions including machinery installation, preventive maintenance, and 24/7 emergency support. We keep your operations running smoothly with minimal downtime."
   },
   {
-    icon: <Home className="h-8 w-8" />,
+    icon: <Home className="h-6 w-6" />,
     title: "Residential Services",
     description: "Household electrical drawing, design and installation",
     details: "From basic wiring to smart home installations, we provide complete residential electrical services. Our experts ensure your home's electrical systems are safe, efficient, and up to code."
   },
   {
-    icon: <Shield className="h-8 w-8" />,
+    icon: <Shield className="h-6 w-6" />,
     title: "Quality Assurance",
     description: "On-site compliance assistance and inspections",
     details: "Rigorous quality control and compliance checks ensure all installations meet or exceed industry standards. We provide detailed documentation and certifications for all completed work."

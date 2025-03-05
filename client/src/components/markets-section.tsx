@@ -4,42 +4,42 @@ import { Building2, Home, GraduationCap, LandPlot, Building, Hotel, UsersRound, 
 
 const markets = [
   {
-    icon: <Building2 className="h-8 w-8" />,
+    icon: <Building2 className="h-6 w-6" />,
     title: "Private Sector",
     description: "Serving companies across all industries"
   },
   {
-    icon: <LandPlot className="h-8 w-8" />,
+    icon: <LandPlot className="h-6 w-6" />,
     title: "Rural Development",
     description: "Supporting rural amenities and infrastructure"
   },
   {
-    icon: <UsersRound className="h-8 w-8" />,
+    icon: <UsersRound className="h-6 w-6" />,
     title: "NGOs & Parastatals",
     description: "Partnering with organizations driving social change"
   },
   {
-    icon: <GraduationCap className="h-8 w-8" />,
+    icon: <GraduationCap className="h-6 w-6" />,
     title: "Educational Institutions",
     description: "Powering learning environments"
   },
   {
-    icon: <Building className="h-8 w-8" />,
+    icon: <Building className="h-6 w-6" />,
     title: "Government & Local Authorities",
     description: "Supporting public sector infrastructure"
   },
   {
-    icon: <Hotel className="h-8 w-8" />,
+    icon: <Hotel className="h-6 w-6" />,
     title: "Hospitality Industry",
     description: "Empowering tourism and hospitality sectors"
   },
   {
-    icon: <Home className="h-8 w-8" />,
+    icon: <Home className="h-6 w-6" />,
     title: "Households",
     description: "Residential electrical solutions"
   },
   {
-    icon: <Factory className="h-8 w-8" />,
+    icon: <Factory className="h-6 w-6" />,
     title: "Industrial",
     description: "Comprehensive industrial electrical services"
   }

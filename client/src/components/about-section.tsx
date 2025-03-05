@@ -4,22 +4,22 @@ import { CheckCircle2, Users, Shield, Award } from "lucide-react";
 
 const highlights = [
   {
-    icon: <Users className="h-8 w-8" />,
+    icon: <Users className="h-6 w-6" />,
     title: "Expert Team",
     description: "Our management and operations personnel are among the finest in the industry"
   },
   {
-    icon: <Shield className="h-8 w-8" />,
+    icon: <Shield className="h-6 w-6" />,
     title: "Quality Assurance",
     description: "Committed to maintaining the highest standards in electrical contracting"
   },
   {
-    icon: <Award className="h-8 w-8" />,
+    icon: <Award className="h-6 w-6" />,
     title: "Industry Experience",
     description: "Long-term employees with deep industry knowledge and expertise"
   },
   {
-    icon: <CheckCircle2 className="h-8 w-8" />,
+    icon: <CheckCircle2 className="h-6 w-6" />,
     title: "Safety First",
     description: "Dedicated to safe work practices and employee satisfaction"
   }

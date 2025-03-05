@@ -4,17 +4,17 @@ import { Check, Users, Target } from "lucide-react";
 
 const values = [
   {
-    icon: <Check className="h-8 w-8" />,
+    icon: <Check className="h-6 w-6" />,
     title: "Integrity",
     description: "We conduct our business with honesty and transparency"
   },
   {
-    icon: <Target className="h-8 w-8" />,
+    icon: <Target className="h-6 w-6" />,
     title: "Reliability",
     description: "Delivering consistent quality in every project we undertake"
   },
   {
-    icon: <Users className="h-8 w-8" />,
+    icon: <Users className="h-6 w-6" />,
     title: "Customer Satisfaction",
     description: "Our clients are our commanders, their success is our priority"
   }
