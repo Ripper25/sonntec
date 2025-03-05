@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import { Menu, X, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Link, useLocation } from "wouter";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [, navigate] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,7 +21,7 @@ export default function Navigation() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const navHeight = 64; // Height of your navigation bar
+      const navHeight = 64;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - navHeight;
 
@@ -27,7 +29,7 @@ export default function Navigation() {
         top: offsetPosition,
         behavior: "smooth"
       });
-      setIsOpen(false); // Close mobile menu if open
+      setIsOpen(false);
     }
   };
 
@@ -39,7 +41,7 @@ export default function Navigation() {
           "transition-colors h-8 px-3 tracking-wide",
           isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
         )}
-        onClick={() => scrollToSection('services')}
+        onClick={() => navigate('/services')}
       >
         Services
       </Button>
@@ -49,7 +51,7 @@ export default function Navigation() {
           "transition-colors h-8 px-3 tracking-wide",
           isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
         )}
-        onClick={() => scrollToSection('values')}
+        onClick={() => navigate('/values')}
       >
         Values
       </Button>
@@ -59,7 +61,7 @@ export default function Navigation() {
           "transition-colors h-8 px-3 tracking-wide",
           isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
         )}
-        onClick={() => scrollToSection('team')}
+        onClick={() => navigate('/team')}
       >
         Team
       </Button>
@@ -69,7 +71,7 @@ export default function Navigation() {
           "transition-colors h-8 px-3 tracking-wide",
           isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
         )}
-        onClick={() => scrollToSection('contact')}
+        onClick={() => navigate('/contact')}
       >
         Contact
       </Button>
@@ -84,12 +86,12 @@ export default function Navigation() {
       )}
     >
       <div className="container mx-auto px-4 h-14 flex items-center justify-between">
-        <div
+        <button
           className={cn(
-            "flex items-center gap-2 cursor-pointer",
+            "flex items-center gap-2",
             isScrolled ? "text-foreground" : "text-white"
           )}
-          onClick={() => scrollToSection('top')}
+          onClick={() => navigate('/')}
         >
           <div className={cn(
             "rounded-full p-2 flex items-center justify-center transition-colors animate-spin-burst animate-glow",
@@ -98,7 +100,7 @@ export default function Navigation() {
             <Zap className="h-6 w-6" />
           </div>
           <span className="font-bold text-lg tracking-tight">Sonnteck & Projects</span>
-        </div>
+        </button>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-2">
@@ -106,24 +108,22 @@ export default function Navigation() {
         </div>
 
         {/* Mobile Navigation */}
-        <div className="md:hidden">
-          <Button 
-            variant="ghost" 
-            size="sm" 
-            className={cn(
-              "h-8 w-8 p-0",
-              isScrolled ? "text-foreground" : "text-white"
-            )}
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
-            <span className="sr-only">Toggle menu</span>
-          </Button>
-        </div>
+        <Button 
+          variant="ghost" 
+          size="sm" 
+          className={cn(
+            "md:hidden h-8 w-8 p-0",
+            isScrolled ? "text-foreground" : "text-white"
+          )}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? (
+            <X className="h-5 w-5" />
+          ) : (
+            <Menu className="h-5 w-5" />
+          )}
+          <span className="sr-only">Toggle menu</span>
+        </Button>
       </div>
 
       {/* Mobile Navigation Dropdown */}
