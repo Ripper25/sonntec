@@ -24,7 +24,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl pl-4 md:pl-8"
+          className="max-w-4xl pl-4 md:pl-8 pt-32 md:pt-48"
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-8 text-white">
             Powering Your Future with Professional Electrical Solutions
