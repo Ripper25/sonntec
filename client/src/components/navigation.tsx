@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "wouter";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,16 +10,24 @@ export default function Navigation() {
   const NavLinks = () => (
     <>
       <Link href="#services">
-        <a className="text-foreground hover:text-primary transition-colors">Services</a>
+        <Button variant="link" className="text-foreground hover:text-primary transition-colors">
+          Services
+        </Button>
       </Link>
       <Link href="#values">
-        <a className="text-foreground hover:text-primary transition-colors">Values</a>
+        <Button variant="link" className="text-foreground hover:text-primary transition-colors">
+          Values
+        </Button>
       </Link>
       <Link href="#team">
-        <a className="text-foreground hover:text-primary transition-colors">Team</a>
+        <Button variant="link" className="text-foreground hover:text-primary transition-colors">
+          Team
+        </Button>
       </Link>
       <Link href="#contact">
-        <a className="text-foreground hover:text-primary transition-colors">Contact</a>
+        <Button variant="link" className="text-foreground hover:text-primary transition-colors">
+          Contact
+        </Button>
       </Link>
     </>
   );
@@ -28,7 +36,9 @@ export default function Navigation() {
     <nav className="fixed w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50 border-b">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/">
-          <a className="font-bold text-xl">Sonnteck & Projects</a>
+          <Button variant="link" className="font-bold text-xl p-0">
+            Sonnteck & Projects
+          </Button>
         </Link>
 
         <div className="hidden md:flex space-x-8">
@@ -39,9 +49,11 @@ export default function Navigation() {
           <SheetTrigger asChild className="md:hidden">
             <Button variant="ghost" size="icon">
               <Menu className="h-6 w-6" />
+              <span className="sr-only">Open menu</span>
             </Button>
           </SheetTrigger>
           <SheetContent>
+            <SheetTitle>Navigation Menu</SheetTitle>
             <div className="flex flex-col space-y-4 mt-8">
               <NavLinks />
             </div>

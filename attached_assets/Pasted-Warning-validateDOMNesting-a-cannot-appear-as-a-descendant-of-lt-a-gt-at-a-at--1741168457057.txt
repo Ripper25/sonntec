@@ -1,0 +1,37 @@
+Warning: validateDOMNesting(...): <a> cannot appear as a descendant of &lt;a&gt;.
+    at a
+    at a
+    at https://d6bebd7b-358f-4053-a899-138711db0fc2-00-2ysb4h1g8dkuh.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=68b8ed26:337:18
+    at div
+    at nav
+    at Navigation (https://d6bebd7b-358f-4053-a899-138711db0fc2-00-2ysb4h1g8dkuh.picard.replit.dev/src/components/navigation.tsx:25:31)
+    at div
+    at Home
+    at Route (https://d6bebd7b-358f-4053-a899-138711db0fc2-00-2ysb4h1g8dkuh.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=68b8ed26:323:16)
+    at Switch (https://d6bebd7b-358f-4053-a899-138711db0fc2-00-2ysb4h1g8dkuh.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=68b8ed26:379:17)
+    at Router
+    at QueryClientProvider (https://d6bebd7b-358f-4053-a899-138711db0fc2-00-2ysb4h1g8dkuh.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=65b65f4d:2805:3)
+    at App
+at a
+at a
+at https://d6bebd7b-358f-4053-a899-138711db0fc2-00-2ysb4h1g8dkuh.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=68b8ed26:337:18
+at div
+at nav
+at Navigation (https://d6bebd7b-358f-4053-a899-138711db0fc2-00-2ysb4h1g8dkuh.picard.replit.dev/src/components/navigation.tsx:25:31)
+at div
+at Home
+at Route (https://d6bebd7b-358f-4053-a899-138711db0fc2-00-2ysb4h1g8dkuh.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=68b8ed26:323:16)
+at Switch (https://d6bebd7b-358f-4053-a899-138711db0fc2-00-2ysb4h1g8dkuh.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=68b8ed26:379:17)
+at Router
+at QueryClientProvider (https://d6bebd7b-358f-4053-a899-138711db0fc2-00-2ysb4h1g8dkuh.picard.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=65b65f4d:2805:3)
+at App
+at t.value (https://d6bebd7b-358f-4053-a899-138711db0fc2-00-2ysb4h1g8dkuh.picard.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:17465)
+at new t (https://d6bebd7b-358f-4053-a899-138711db0fc2-00-2ysb4h1g8dkuh.picard.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:12630)
+at t.value (https://d6bebd7b-358f-4053-a899-138711db0fc2-00-2ysb4h1g8dkuh.picard.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:32766)
+at https://d6bebd7b-358f-4053-a899-138711db0fc2-00-2ysb4h1g8dkuh.picard.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:34400
+`DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
+
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
+
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
