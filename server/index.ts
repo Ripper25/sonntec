@@ -61,7 +61,26 @@ app.use((req, res, next) => {
   }
 
   // Bind to all network interfaces
-  const port = 5000;
+  const tryPort = (port: number): Promise<number> => {
+    return new Promise((resolve) => {
+      const testServer = require('http').createServer();
+      testServer.once('error', (err: any) => {
+        if (err.code === 'EADDRINUSE') {
+          resolve(tryPort(port + 1)); // Try next port
+        } else {
+          console.error('Error checking port:', err);
+          resolve(port + 1); // Still increment port on other errors
+        }
+      });
+      testServer.once('listening', () => {
+        testServer.close(() => resolve(port));
+      });
+      testServer.listen(port, '0.0.0.0');
+    });
+  };
+
+  // Find an available port starting from 5000
+  const port = await tryPort(5000);
   server.listen({
     port,
     host: "0.0.0.0",
