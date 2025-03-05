@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useLocation } from "wouter";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 import {
   Form,
   FormControl,
@@ -31,6 +33,7 @@ const quoteFormSchema = z.object({
 });
 
 export default function QuoteCalculator() {
+  const [, navigate] = useLocation();
   const [estimatedCost, setEstimatedCost] = useState<number | null>(null);
 
   const form = useForm({
@@ -61,7 +64,7 @@ export default function QuoteCalculator() {
 
     // Voltage multiplier
     const voltageMultiplier = data.voltageType === "highVoltage" ? 1.5 : 1;
-    
+
     return baseCost * voltageMultiplier;
   };
 
@@ -72,7 +75,16 @@ export default function QuoteCalculator() {
 
   return (
     <div className="min-h-screen bg-background pt-20">
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-8">
+        <Button
+          variant="ghost"
+          className="mb-8 gap-2"
+          onClick={() => navigate("/")}
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back to Home
+        </Button>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

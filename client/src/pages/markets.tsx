@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
+import { useLocation } from "wouter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 import { Building2, Home, GraduationCap, LandPlot, Building, Hotel, UsersRound, Factory } from "lucide-react";
 
 const markets = [
@@ -102,9 +105,20 @@ const markets = [
 ];
 
 export default function Markets() {
+  const [, navigate] = useLocation();
+
   return (
     <div className="min-h-screen bg-background pt-20">
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-8">
+        <Button
+          variant="ghost"
+          className="mb-8 gap-2"
+          onClick={() => navigate("/")}
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back to Home
+        </Button>
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
