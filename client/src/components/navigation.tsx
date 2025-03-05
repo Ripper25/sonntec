@@ -93,10 +93,10 @@ export default function Navigation() {
           onClick={() => scrollToSection('top')}
         >
           <div className={cn(
-            "rounded-full p-1 flex items-center justify-center transition-colors",
+            "rounded-full p-3 flex items-center justify-center transition-colors",
             isScrolled ? "bg-primary text-white" : "bg-white text-primary"
           )}>
-            <Zap className="h-5 w-5" />
+            <Zap className="h-8 w-8" />
           </div>
           Sonnteck & Projects
         </Button>
