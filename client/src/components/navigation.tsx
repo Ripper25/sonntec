@@ -2,72 +2,10 @@ import { useState, useEffect } from "react";
 import { Menu, X, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useLocation } from "wouter";
-
-interface NavLinksProps {
-  isScrolled: boolean;
-  scrollToSection: (sectionId: string) => void;
-}
-
-const NavLinks = ({ isScrolled, scrollToSection }: NavLinksProps) => (
-  <>
-    <Button 
-      variant="ghost" 
-      className={cn(
-        "transition-colors h-8 px-3 tracking-wide",
-        isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
-      )}
-      onClick={() => scrollToSection('about')}
-    >
-      About Us
-    </Button>
-    <Button 
-      variant="ghost" 
-      className={cn(
-        "transition-colors h-8 px-3 tracking-wide",
-        isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
-      )}
-      onClick={() => scrollToSection('services')}
-    >
-      Services
-    </Button>
-    <Button 
-      variant="ghost" 
-      className={cn(
-        "transition-colors h-8 px-3 tracking-wide",
-        isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
-      )}
-      onClick={() => scrollToSection('values')}
-    >
-      Values
-    </Button>
-    <Button 
-      variant="ghost" 
-      className={cn(
-        "transition-colors h-8 px-3 tracking-wide",
-        isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
-      )}
-      onClick={() => scrollToSection('team')}
-    >
-      Team
-    </Button>
-    <Button 
-      variant="ghost" 
-      className={cn(
-        "transition-colors h-8 px-3 tracking-wide",
-        isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
-      )}
-      onClick={() => scrollToSection('contact')}
-    >
-      Contact
-    </Button>
-  </>
-);
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [, navigate] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -81,7 +19,7 @@ export default function Navigation() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const navHeight = 64;
+      const navHeight = 64; // Height of your navigation bar
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - navHeight;
 
@@ -89,9 +27,54 @@ export default function Navigation() {
         top: offsetPosition,
         behavior: "smooth"
       });
-      setIsOpen(false);
+      setIsOpen(false); // Close mobile menu if open
     }
   };
+
+  const NavLinks = () => (
+    <>
+      <Button 
+        variant="ghost" 
+        className={cn(
+          "transition-colors h-8 px-3 tracking-wide",
+          isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
+        )}
+        onClick={() => scrollToSection('services')}
+      >
+        Services
+      </Button>
+      <Button 
+        variant="ghost" 
+        className={cn(
+          "transition-colors h-8 px-3 tracking-wide",
+          isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
+        )}
+        onClick={() => scrollToSection('values')}
+      >
+        Values
+      </Button>
+      <Button 
+        variant="ghost" 
+        className={cn(
+          "transition-colors h-8 px-3 tracking-wide",
+          isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
+        )}
+        onClick={() => scrollToSection('team')}
+      >
+        Team
+      </Button>
+      <Button 
+        variant="ghost" 
+        className={cn(
+          "transition-colors h-8 px-3 tracking-wide",
+          isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
+        )}
+        onClick={() => scrollToSection('contact')}
+      >
+        Contact
+      </Button>
+    </>
+  );
 
   return (
     <nav 
@@ -101,14 +84,12 @@ export default function Navigation() {
       )}
     >
       <div className="container mx-auto px-4 h-14 flex items-center justify-between">
-        {/* Logo - Changed to button to avoid nested anchor tags */}
-        <Button
-          variant="ghost"
+        <div
           className={cn(
-            "flex items-center gap-2 p-0 h-auto hover:bg-transparent",
+            "flex items-center gap-2 cursor-pointer",
             isScrolled ? "text-foreground" : "text-white"
           )}
-          onClick={() => navigate("/")}
+          onClick={() => scrollToSection('top')}
         >
           <div className={cn(
             "rounded-full p-2 flex items-center justify-center transition-colors animate-spin-burst animate-glow",
@@ -117,11 +98,11 @@ export default function Navigation() {
             <Zap className="h-6 w-6" />
           </div>
           <span className="font-bold text-lg tracking-tight">Sonnteck & Projects</span>
-        </Button>
+        </div>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-2">
-          <NavLinks isScrolled={isScrolled} scrollToSection={scrollToSection} />
+          <NavLinks />
         </div>
 
         {/* Mobile Navigation */}
@@ -154,7 +135,7 @@ export default function Navigation() {
         )}
       >
         <div className="container mx-auto px-4 py-2 flex flex-col space-y-1">
-          <NavLinks isScrolled={isScrolled} scrollToSection={scrollToSection} />
+          <NavLinks />
         </div>
       </div>
     </nav>

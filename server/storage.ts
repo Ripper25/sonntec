@@ -7,7 +7,6 @@ export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
-  createContactMessage(data: any): Promise<any>;
 }
 
 export class MemStorage implements IStorage {
@@ -34,16 +33,6 @@ export class MemStorage implements IStorage {
     const user: User = { ...insertUser, id };
     this.users.set(id, user);
     return user;
-  }
-  
-  async createContactMessage(data: any): Promise<any> {
-    // Simple implementation that just returns the data
-    // In a real application, you would store this in a database
-    return {
-      id: this.currentId++,
-      ...data,
-      createdAt: new Date().toISOString()
-    };
   }
 }
 
