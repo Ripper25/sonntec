@@ -84,10 +84,9 @@ export default function Navigation() {
       )}
     >
       <div className="container mx-auto px-4 h-14 flex items-center justify-between">
-        <Button 
-          variant="ghost" 
+        <div
           className={cn(
-            "font-bold text-lg p-0 h-8 tracking-tight flex items-center gap-2",
+            "flex items-center gap-2 cursor-pointer",
             isScrolled ? "text-foreground" : "text-white"
           )}
           onClick={() => scrollToSection('top')}
@@ -98,8 +97,8 @@ export default function Navigation() {
           )}>
             <Zap className="h-8 w-8" />
           </div>
-          Sonnteck & Projects
-        </Button>
+          <span className="font-bold text-lg tracking-tight">Sonnteck & Projects</span>
+        </div>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-2">
