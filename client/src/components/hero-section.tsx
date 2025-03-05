@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[85vh] flex items-center">
+    <section className="relative min-h-[85vh] flex items-center justify-center">
       {/* Background Image */}
       <div 
         className="absolute inset-0 z-0"
@@ -24,15 +24,15 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl pl-4 md:pl-8 pt-32 md:pt-48"
+          className="max-w-4xl mx-auto text-center"
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-8 text-white">
             Powering Your Future with Professional Electrical Solutions
           </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl">
+          <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
             Your trusted partner in electrical construction and maintenance, delivering superior quality and reliability across industrial, residential, and commercial sectors.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="gap-2 bg-white text-primary hover:bg-white/90">
               Get Started
               <ArrowRight className="h-5 w-5" />
