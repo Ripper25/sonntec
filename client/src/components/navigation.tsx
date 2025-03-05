@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
@@ -32,28 +31,51 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const navHeight = 64; // Height of your navigation bar
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+      setIsOpen(false); // Close mobile menu if open
+    }
+  };
+
   const NavLinks = () => (
     <>
-      <Link href="#services">
-        <Button variant="ghost" className="text-foreground hover:text-primary transition-colors h-8 px-3 tracking-wide">
-          Services
-        </Button>
-      </Link>
-      <Link href="#values">
-        <Button variant="ghost" className="text-foreground hover:text-primary transition-colors h-8 px-3 tracking-wide">
-          Values
-        </Button>
-      </Link>
-      <Link href="#team">
-        <Button variant="ghost" className="text-foreground hover:text-primary transition-colors h-8 px-3 tracking-wide">
-          Team
-        </Button>
-      </Link>
-      <Link href="#contact">
-        <Button variant="ghost" className="text-foreground hover:text-primary transition-colors h-8 px-3 tracking-wide">
-          Contact
-        </Button>
-      </Link>
+      <Button 
+        variant="ghost" 
+        className="text-foreground hover:text-primary transition-colors h-8 px-3 tracking-wide"
+        onClick={() => scrollToSection('services')}
+      >
+        Services
+      </Button>
+      <Button 
+        variant="ghost" 
+        className="text-foreground hover:text-primary transition-colors h-8 px-3 tracking-wide"
+        onClick={() => scrollToSection('values')}
+      >
+        Values
+      </Button>
+      <Button 
+        variant="ghost" 
+        className="text-foreground hover:text-primary transition-colors h-8 px-3 tracking-wide"
+        onClick={() => scrollToSection('team')}
+      >
+        Team
+      </Button>
+      <Button 
+        variant="ghost" 
+        className="text-foreground hover:text-primary transition-colors h-8 px-3 tracking-wide"
+        onClick={() => scrollToSection('contact')}
+      >
+        Contact
+      </Button>
     </>
   );
 
@@ -66,11 +88,13 @@ export default function Navigation() {
       )}
     >
       <div className="container mx-auto px-4 h-14 flex items-center justify-between">
-        <Link href="/">
-          <Button variant="ghost" className="font-bold text-lg p-0 h-8 tracking-tight">
-            Sonnteck & Projects
-          </Button>
-        </Link>
+        <Button 
+          variant="ghost" 
+          className="font-bold text-lg p-0 h-8 tracking-tight"
+          onClick={() => scrollToSection('top')}
+        >
+          Sonnteck & Projects
+        </Button>
 
         <div className="hidden md:flex space-x-2">
           <NavLinks />

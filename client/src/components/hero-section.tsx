@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative h-screen flex items-center justify-center">
+    <section id="top" className="relative h-screen flex items-center justify-center">
       {/* Background Image */}
       <div 
         className="absolute inset-0 z-0"
