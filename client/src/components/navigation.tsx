@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useLocation } from "wouter";
 
 interface NavLinksProps {
   isScrolled: boolean;
@@ -66,6 +67,7 @@ const NavLinks = ({ isScrolled, scrollToSection }: NavLinksProps) => (
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [, navigate] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -79,7 +81,7 @@ export default function Navigation() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const navHeight = 64; // Height of your navigation bar
+      const navHeight = 64;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - navHeight;
 
@@ -87,7 +89,7 @@ export default function Navigation() {
         top: offsetPosition,
         behavior: "smooth"
       });
-      setIsOpen(false); // Close mobile menu if open
+      setIsOpen(false);
     }
   };
 
@@ -99,12 +101,14 @@ export default function Navigation() {
       )}
     >
       <div className="container mx-auto px-4 h-14 flex items-center justify-between">
-        <div
+        {/* Logo - Changed to button to avoid nested anchor tags */}
+        <Button
+          variant="ghost"
           className={cn(
-            "flex items-center gap-2 cursor-pointer",
+            "flex items-center gap-2 p-0 h-auto hover:bg-transparent",
             isScrolled ? "text-foreground" : "text-white"
           )}
-          onClick={() => scrollToSection('top')}
+          onClick={() => navigate("/")}
         >
           <div className={cn(
             "rounded-full p-2 flex items-center justify-center transition-colors animate-spin-burst animate-glow",
@@ -113,7 +117,7 @@ export default function Navigation() {
             <Zap className="h-6 w-6" />
           </div>
           <span className="font-bold text-lg tracking-tight">Sonnteck & Projects</span>
-        </div>
+        </Button>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-2">
