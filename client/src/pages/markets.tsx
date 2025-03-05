@@ -7,7 +7,7 @@ import { Building2, Home, GraduationCap, LandPlot, Building, Hotel, UsersRound, 
 
 const markets = [
   {
-    icon: <Building2 className="h-12 w-12" />,
+    icon: <Building2 className="h-6 w-6" />,
     title: "Private Sector",
     description: "Serving companies across all industries",
     details: [
@@ -19,7 +19,7 @@ const markets = [
     ]
   },
   {
-    icon: <LandPlot className="h-12 w-12" />,
+    icon: <LandPlot className="h-6 w-6" />,
     title: "Rural Development",
     description: "Supporting rural amenities and infrastructure",
     details: [
@@ -31,7 +31,7 @@ const markets = [
     ]
   },
   {
-    icon: <UsersRound className="h-12 w-12" />,
+    icon: <UsersRound className="h-6 w-6" />,
     title: "NGOs & Parastatals",
     description: "Partnering with organizations driving social change",
     details: [
@@ -43,7 +43,7 @@ const markets = [
     ]
   },
   {
-    icon: <GraduationCap className="h-12 w-12" />,
+    icon: <GraduationCap className="h-6 w-6" />,
     title: "Educational Institutions",
     description: "Powering learning environments",
     details: [
@@ -55,7 +55,7 @@ const markets = [
     ]
   },
   {
-    icon: <Building className="h-12 w-12" />,
+    icon: <Building className="h-6 w-6" />,
     title: "Government & Local Authorities",
     description: "Supporting public sector infrastructure",
     details: [
@@ -67,7 +67,7 @@ const markets = [
     ]
   },
   {
-    icon: <Hotel className="h-12 w-12" />,
+    icon: <Hotel className="h-6 w-6" />,
     title: "Hospitality Industry",
     description: "Empowering tourism and hospitality sectors",
     details: [
@@ -79,7 +79,7 @@ const markets = [
     ]
   },
   {
-    icon: <Home className="h-12 w-12" />,
+    icon: <Home className="h-6 w-6" />,
     title: "Households",
     description: "Residential electrical solutions",
     details: [
@@ -91,7 +91,7 @@ const markets = [
     ]
   },
   {
-    icon: <Factory className="h-12 w-12" />,
+    icon: <Factory className="h-6 w-6" />,
     title: "Industrial",
     description: "Comprehensive industrial electrical services",
     details: [
