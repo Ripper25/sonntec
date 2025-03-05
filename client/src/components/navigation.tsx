@@ -9,7 +9,6 @@ export default function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Check if scrolled past 50px to add background effects
       setIsScrolled(window.scrollY > 50);
     };
 
@@ -36,28 +35,40 @@ export default function Navigation() {
     <>
       <Button 
         variant="ghost" 
-        className="text-foreground hover:text-primary transition-colors h-8 px-3 tracking-wide"
+        className={cn(
+          "transition-colors h-8 px-3 tracking-wide",
+          isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
+        )}
         onClick={() => scrollToSection('services')}
       >
         Services
       </Button>
       <Button 
         variant="ghost" 
-        className="text-foreground hover:text-primary transition-colors h-8 px-3 tracking-wide"
+        className={cn(
+          "transition-colors h-8 px-3 tracking-wide",
+          isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
+        )}
         onClick={() => scrollToSection('values')}
       >
         Values
       </Button>
       <Button 
         variant="ghost" 
-        className="text-foreground hover:text-primary transition-colors h-8 px-3 tracking-wide"
+        className={cn(
+          "transition-colors h-8 px-3 tracking-wide",
+          isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
+        )}
         onClick={() => scrollToSection('team')}
       >
         Team
       </Button>
       <Button 
         variant="ghost" 
-        className="text-foreground hover:text-primary transition-colors h-8 px-3 tracking-wide"
+        className={cn(
+          "transition-colors h-8 px-3 tracking-wide",
+          isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
+        )}
         onClick={() => scrollToSection('contact')}
       >
         Contact
@@ -75,7 +86,10 @@ export default function Navigation() {
       <div className="container mx-auto px-4 h-14 flex items-center justify-between">
         <Button 
           variant="ghost" 
-          className="font-bold text-lg p-0 h-8 tracking-tight"
+          className={cn(
+            "font-bold text-lg p-0 h-8 tracking-tight",
+            isScrolled ? "text-foreground" : "text-white"
+          )}
           onClick={() => scrollToSection('top')}
         >
           Sonnteck & Projects
@@ -91,7 +105,10 @@ export default function Navigation() {
           <Button 
             variant="ghost" 
             size="sm" 
-            className="h-8 w-8 p-0"
+            className={cn(
+              "h-8 w-8 p-0",
+              isScrolled ? "text-foreground" : "text-white"
+            )}
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? (
