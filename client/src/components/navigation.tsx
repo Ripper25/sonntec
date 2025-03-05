@@ -6,29 +6,16 @@ import { cn } from "@/lib/utils";
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
       // Check if scrolled past 50px to add background effects
-      setIsScrolled(currentScrollY > 50);
-
-      // Show/hide based on scroll direction
-      if (currentScrollY < lastScrollY || currentScrollY < 50) {
-        setIsVisible(true);
-      } else if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        setIsVisible(false);
-      }
-
-      setLastScrollY(currentScrollY);
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -81,8 +68,7 @@ export default function Navigation() {
   return (
     <nav 
       className={cn(
-        "fixed w-full z-50 transition-all duration-300 transform",
-        isVisible ? "translate-y-0" : "-translate-y-full",
+        "fixed w-full z-50 transition-all duration-300",
         isScrolled ? "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b shadow-sm" : "bg-transparent"
       )}
     >
