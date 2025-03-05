@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
+import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
+  const [, navigate] = useLocation();
+
   return (
     <section id="top" className="relative h-screen flex items-center justify-center">
       {/* Background Image */}
@@ -33,11 +36,20 @@ export default function HeroSection() {
             Your trusted partner in electrical construction and maintenance, delivering superior quality and reliability across industrial, residential, and commercial sectors.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="gap-2 bg-white text-primary hover:bg-white/90">
+            <Button 
+              size="lg" 
+              className="gap-2 bg-white text-primary hover:bg-white/90"
+              onClick={() => navigate("/quote")}
+            >
               Get Started
               <ArrowRight className="h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white/10">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="bg-transparent border-white text-white hover:bg-white/10"
+              onClick={() => navigate("/markets")}
+            >
               Learn More
             </Button>
           </div>
