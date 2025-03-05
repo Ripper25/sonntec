@@ -26,10 +26,10 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto text-center mt-20"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-8 text-white">
+          <h1 className="text-4xl md:text-6xl font-bold mb-8 text-white tracking-tight">
             Powering Your Future with Professional Electrical Solutions
           </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto tracking-normal">
             Your trusted partner in electrical construction and maintenance, delivering superior quality and reliability across industrial, residential, and commercial sectors.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

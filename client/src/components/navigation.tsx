@@ -35,22 +35,22 @@ export default function Navigation() {
   const NavLinks = () => (
     <>
       <Link href="#services">
-        <Button variant="ghost" className="text-foreground hover:text-primary transition-colors h-8 px-3">
+        <Button variant="ghost" className="text-foreground hover:text-primary transition-colors h-8 px-3 tracking-wide">
           Services
         </Button>
       </Link>
       <Link href="#values">
-        <Button variant="ghost" className="text-foreground hover:text-primary transition-colors h-8 px-3">
+        <Button variant="ghost" className="text-foreground hover:text-primary transition-colors h-8 px-3 tracking-wide">
           Values
         </Button>
       </Link>
       <Link href="#team">
-        <Button variant="ghost" className="text-foreground hover:text-primary transition-colors h-8 px-3">
+        <Button variant="ghost" className="text-foreground hover:text-primary transition-colors h-8 px-3 tracking-wide">
           Team
         </Button>
       </Link>
       <Link href="#contact">
-        <Button variant="ghost" className="text-foreground hover:text-primary transition-colors h-8 px-3">
+        <Button variant="ghost" className="text-foreground hover:text-primary transition-colors h-8 px-3 tracking-wide">
           Contact
         </Button>
       </Link>
@@ -67,7 +67,7 @@ export default function Navigation() {
     >
       <div className="container mx-auto px-4 h-14 flex items-center justify-between">
         <Link href="/">
-          <Button variant="ghost" className="font-bold text-lg p-0 h-8">
+          <Button variant="ghost" className="font-bold text-lg p-0 h-8 tracking-tight">
             Sonnteck & Projects
           </Button>
         </Link>
@@ -84,7 +84,7 @@ export default function Navigation() {
             </Button>
           </SheetTrigger>
           <SheetContent>
-            <SheetTitle>Navigation Menu</SheetTitle>
+            <SheetTitle className="tracking-tight">Navigation Menu</SheetTitle>
             <div className="flex flex-col space-y-4 mt-8">
               <NavLinks />
             </div>
