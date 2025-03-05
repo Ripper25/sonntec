@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -87,11 +87,17 @@ export default function Navigation() {
         <Button 
           variant="ghost" 
           className={cn(
-            "font-bold text-lg p-0 h-8 tracking-tight",
+            "font-bold text-lg p-0 h-8 tracking-tight flex items-center gap-2",
             isScrolled ? "text-foreground" : "text-white"
           )}
           onClick={() => scrollToSection('top')}
         >
+          <div className={cn(
+            "rounded-full p-1 flex items-center justify-center transition-colors",
+            isScrolled ? "bg-primary text-white" : "bg-white text-primary"
+          )}>
+            <Zap className="h-5 w-5" />
+          </div>
           Sonnteck & Projects
         </Button>
 
