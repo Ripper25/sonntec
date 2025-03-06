@@ -8,26 +8,26 @@ export default function HeroSection() {
 
   return (
     <>
-      <div 
-        className="fixed inset-0 z-0"
-        style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&q=80")',
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="absolute inset-0 bg-black/40" />
+      {/* Hero Background */}
+      <div className="absolute top-0 left-0 w-full h-screen z-0">
+        <div 
+          style={{
+            backgroundImage: 'url("https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&q=80")',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            width: '100%',
+            height: '100%'
+          }}
+        >
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
       </div>
 
-      <section className="relative min-h-[200vh]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-[20vh] sm:pt-[25vh]">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-5xl mx-auto text-center"
-          >
+      {/* Hero Content */}
+      <section className="relative h-screen flex items-center z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto text-center">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 lg:mb-10 text-white tracking-tight leading-[1.1]">
               Powering Your Future with Professional Electrical Solutions
             </h1>
@@ -52,13 +52,14 @@ export default function HeroSection() {
                 View Markets
               </Button>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      <div className="relative z-20 bg-background min-h-screen">
-        {/* This div will contain the rest of your content sections */}
-      </div>
+      {/* Main Content */}
+      <main className="relative bg-background">
+        {/* Other content sections will be rendered here */}
+      </main>
     </>
   );
 }
