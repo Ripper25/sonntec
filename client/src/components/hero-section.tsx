@@ -25,7 +25,7 @@ export default function HeroSection() {
       </div>
 
       {/* Hero Content */}
-      <section className="relative h-screen flex items-center z-10">
+      <section className="relative h-screen flex items-center z-10 pt-16 sm:pt-20 lg:pt-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto text-center">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 lg:mb-10 text-white tracking-tight leading-[1.1]">
