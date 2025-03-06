@@ -5,6 +5,8 @@ import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
 import Preloader from "@/components/preloader";
 import Home from "@/pages/home";
+import QuoteCalculator from "@/pages/quote-calculator";
+import Markets from "@/pages/markets";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -25,6 +27,8 @@ export default function App() {
         <>
           <Switch>
             <Route path="/" component={Home} />
+            <Route path="/quote" component={QuoteCalculator} />
+            <Route path="/markets" component={Markets} />
           </Switch>
           <Toaster />
         </>
