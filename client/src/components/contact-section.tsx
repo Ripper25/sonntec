@@ -26,10 +26,23 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
-      {/* Background with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background to-muted/30" />
+      {/* Background with pattern and gradient */}
+      <div className="absolute inset-0">
+        <div 
+          style={{
+            backgroundImage: 'url("https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80")',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            width: '100%',
+            height: '100%'
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background/90" />
+        </div>
+      </div>
 
-      <div className="container mx-auto px-4 relative">
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -52,7 +65,7 @@ export default function ContactSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="h-full border-2 hover:border-primary/20 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+              <Card className="h-full border-2 hover:border-primary/20 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 bg-background/80 backdrop-blur-sm">
                 <CardContent className="pt-8 pb-6 text-center relative">
                   {/* Decorative circle behind icon */}
                   <div className="absolute top-6 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-primary/10 -z-10" />

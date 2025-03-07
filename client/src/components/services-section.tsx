@@ -32,8 +32,24 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-16 bg-muted/30">
-      <div className="container mx-auto px-4">
+    <section id="services" className="py-16 relative">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <div 
+          style={{
+            backgroundImage: 'url("https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80")',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            width: '100%',
+            height: '100%'
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background/90" />
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -58,7 +74,7 @@ export default function ServicesSection() {
             >
               <HoverCard>
                 <HoverCardTrigger asChild>
-                  <Card className="h-full cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                  <Card className="h-full cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-background/80 backdrop-blur-sm">
                     <CardHeader>
                       <div className="text-primary mb-4 transition-transform duration-300 group-hover:scale-110">
                         {service.icon}
