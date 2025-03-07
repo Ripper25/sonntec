@@ -59,16 +59,6 @@ export default function Navigation() {
           "transition-colors h-8 px-3 tracking-wide",
           isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
         )}
-        onClick={() => scrollToSection('team')}
-      >
-        Team
-      </Button>
-      <Button 
-        variant="ghost" 
-        className={cn(
-          "transition-colors h-8 px-3 tracking-wide",
-          isScrolled ? "text-foreground hover:text-primary" : "text-white hover:text-white/80"
-        )}
         onClick={() => scrollToSection('contact')}
       >
         Contact
