@@ -29,22 +29,23 @@ const BackgroundAnimation = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       <div className="absolute w-full h-full">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(30)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-primary/10"
+            className="absolute rounded-full bg-gradient-to-br from-primary/30 to-primary/20"
             style={{
-              width: Math.random() * 20 + 10,
-              height: Math.random() * 20 + 10,
+              width: Math.random() * 80 + 40, // Increased size 4x
+              height: Math.random() * 80 + 40, // Increased size 4x
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
             }}
             animate={{
-              y: [0, -30, 0],
-              opacity: [0.3, 0.8, 0.3],
+              y: [0, -120, 0], // Increased movement range 4x
+              scale: [1, 1.2, 1],
+              opacity: [0.4, 0.9, 0.4], // Increased opacity
             }}
             transition={{
-              duration: Math.random() * 3 + 2,
+              duration: Math.random() * 4 + 3,
               repeat: Infinity,
               ease: "easeInOut",
               delay: Math.random() * 2,
