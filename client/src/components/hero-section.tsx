@@ -8,23 +8,16 @@ export default function HeroSection() {
 
   return (
     <>
-      {/* Hero Background with Parallax */}
-      <div 
-        className="absolute top-0 left-0 w-full h-screen overflow-hidden z-0"
-        style={{
-          perspective: "1px",
-          perspectiveOrigin: "center top"
-        }}
-      >
+      {/* Hero Background */}
+      <div className="absolute top-0 left-0 w-full h-screen z-0">
         <div 
-          className="absolute top-0 left-0 w-full h-full transform-gpu translate-z-0"
           style={{
             backgroundImage: 'url("https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&q=80")',
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-            transform: 'translateZ(-1px) scale(2)',
-            zIndex: -1
+            width: '100%',
+            height: '100%'
           }}
         >
           <div className="absolute inset-0 bg-black/40" />
