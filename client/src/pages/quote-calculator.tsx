@@ -24,6 +24,40 @@ import {
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
+const BackgroundAnimation = () => {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute w-full h-full">
+        {[...Array(40)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute rounded-lg bg-gradient-to-br from-primary/20 to-primary/10"
+            style={{
+              width: Math.random() * 100 + 50,
+              height: Math.random() * 100 + 50,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              rotate: Math.random() * 360,
+            }}
+            animate={{
+              y: [0, -100, 0],
+              rotate: [0, 360],
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.6, 0.3],
+            }}
+            transition={{
+              duration: Math.random() * 5 + 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const quoteFormSchema = z.object({
   serviceType: z.string().min(1, "Please select a service type"),
   squareMeters: z.string().refine((val) => !isNaN(Number(val)) && Number(val) > 0, {
@@ -74,8 +108,11 @@ export default function QuoteCalculator() {
   }
 
   return (
-    <div className="min-h-screen bg-background pt-20">
-      <div className="container mx-auto px-4 py-8">
+    <div className="min-h-screen bg-background pt-20 relative overflow-hidden">
+      {/* Animated Background */}
+      <BackgroundAnimation />
+
+      <div className="container mx-auto px-4 py-8 relative z-10">
         <Button
           variant="ghost"
           className="mb-8 gap-2"
@@ -91,7 +128,7 @@ export default function QuoteCalculator() {
           transition={{ duration: 0.5 }}
           className="max-w-2xl mx-auto"
         >
-          <Card>
+          <Card className="backdrop-blur-sm bg-background/95 border-2 hover:border-primary/20 transition-all duration-300">
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-center">
                 Request a Quote
@@ -175,7 +212,7 @@ export default function QuoteCalculator() {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="mt-6 p-4 bg-muted rounded-lg"
+                  className="mt-6 p-4 bg-muted/80 backdrop-blur-sm rounded-lg"
                 >
                   <p className="text-center">
                     Estimated Cost: <span className="font-bold">${estimatedCost.toFixed(2)}</span>
