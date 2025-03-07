@@ -57,7 +57,7 @@ export default function ServicesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">What We Do</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">What We Do</h2>
           <p className="text-white/90 max-w-2xl mx-auto">
             We specialize in developing, implementing and maintaining solutions for individuals and industries.
           </p>
