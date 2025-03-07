@@ -33,7 +33,7 @@ const services = [
 export default function ServicesSection() {
   return (
     <section id="services" className="py-16 relative">
-      {/* Background Image with Overlay */}
+      {/* Background Image with Enhanced Overlay */}
       <div className="absolute inset-0 z-0">
         <div 
           style={{
@@ -45,7 +45,7 @@ export default function ServicesSection() {
             height: '100%'
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/98 via-background/95 to-background/98" />
         </div>
       </div>
 
@@ -74,7 +74,7 @@ export default function ServicesSection() {
             >
               <HoverCard>
                 <HoverCardTrigger asChild>
-                  <Card className="h-full cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-background/80 backdrop-blur-sm">
+                  <Card className="h-full cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-background/90 backdrop-blur-md">
                     <CardHeader>
                       <div className="text-primary mb-4 transition-transform duration-300 group-hover:scale-110">
                         {service.icon}
