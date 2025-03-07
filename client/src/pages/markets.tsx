@@ -108,29 +108,29 @@ const BackgroundAnimation = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
       <div className="absolute w-full h-full">
-        {[...Array(15)].map((_, i) => (
+        {[...Array(25)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute bg-gradient-to-br from-primary/10 via-primary/5 to-transparent"
+            className="absolute bg-gradient-to-br from-primary/30 via-primary/20 to-transparent"
             style={{
-              width: Math.random() * 400 + 200,
-              height: Math.random() * 400 + 200,
-              borderRadius: '40%',
+              width: Math.random() * 600 + 300,
+              height: Math.random() * 600 + 300,
+              borderRadius: '30%',
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              filter: 'blur(40px)',
+              filter: 'blur(60px)',
             }}
             animate={{
-              x: [0, Math.random() * 100 - 50],
-              y: [0, Math.random() * 100 - 50],
+              x: [0, Math.random() * 200 - 100],
+              y: [0, Math.random() * 200 - 100],
               rotate: [0, 360],
-              scale: [0.8, 1.2, 0.8],
-              opacity: [0.3, 0.5, 0.3],
+              scale: [0.9, 1.3, 0.9],
+              opacity: [0.4, 0.7, 0.4],
             }}
             transition={{
-              duration: Math.random() * 20 + 15,
+              duration: Math.random() * 15 + 10,
               repeat: Infinity,
-              ease: "linear",
+              ease: "easeInOut",
               delay: Math.random() * 5,
             }}
           />
