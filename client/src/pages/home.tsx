@@ -2,8 +2,7 @@ import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import AboutSection from "@/components/about-section";
 import ServicesSection from "@/components/services-section";
-import TeamSection from "@/components/team-section";
-import ContactForm from "@/components/contact-form";
+import ContactSection from "@/components/contact-section";
 
 export default function Home() {
   return (
@@ -13,8 +12,7 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <ServicesSection />
-        <TeamSection />
-        <ContactForm />
+        <ContactSection />
       </main>
     </div>
   );
