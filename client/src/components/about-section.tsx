@@ -25,10 +25,45 @@ const highlights = [
   }
 ];
 
+const BackgroundAnimation = () => {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute w-full h-full">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute rounded-full bg-primary/10"
+            style={{
+              width: Math.random() * 20 + 10,
+              height: Math.random() * 20 + 10,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -30, 0],
+              opacity: [0.3, 0.8, 0.3],
+            }}
+            transition={{
+              duration: Math.random() * 3 + 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 export default function AboutSection() {
   return (
-    <section id="about" className="py-16">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-16 relative overflow-hidden">
+      {/* Animated Background */}
+      <BackgroundAnimation />
+
+      {/* Content */}
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -53,7 +88,7 @@ export default function AboutSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="h-full">
+              <Card className="h-full backdrop-blur-sm bg-background/95 border-2 hover:border-primary/20 transition-all duration-300">
                 <CardContent className="pt-6 text-center">
                   <div className="text-primary mb-4 flex justify-center">
                     {highlight.icon}
@@ -71,7 +106,7 @@ export default function AboutSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-muted/30 p-8 rounded-lg"
+          className="bg-muted/30 backdrop-blur-sm p-8 rounded-lg border-2 border-primary/5"
         >
           <h3 className="text-xl font-semibold mb-4 text-center">Our Commitment to Quality</h3>
           <p className="text-muted-foreground text-center max-w-3xl mx-auto">
