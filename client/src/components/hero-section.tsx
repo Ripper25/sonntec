@@ -2,9 +2,12 @@ import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useViewportScale } from "@/hooks/use-viewport-scale";
 
 export default function HeroSection() {
   const [, navigate] = useLocation();
+  const headingSize = useViewportScale(64, 40, 84); // base: 64px, min: 40px, max: 84px
+  const descriptionSize = useViewportScale(20, 16, 24); // base: 20px, min: 16px, max: 24px
 
   return (
     <>
@@ -28,10 +31,16 @@ export default function HeroSection() {
       <section className="relative h-screen flex items-center z-10 pt-16 sm:pt-20 lg:pt-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto text-center">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 lg:mb-10 text-white tracking-tight leading-[1.1]">
+            <h1 
+              className="font-bold mb-6 sm:mb-8 lg:mb-10 text-white tracking-tight leading-[1.1]"
+              style={{ fontSize: `${headingSize}px` }}
+            >
               Powering Your Future with Professional Electrical Solutions
             </h1>
-            <p className="text-xl sm:text-2xl text-white/90 mb-8 sm:mb-10 lg:mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p 
+              className="text-white/90 mb-8 sm:mb-10 lg:mb-12 max-w-3xl mx-auto leading-relaxed"
+              style={{ fontSize: `${descriptionSize}px` }}
+            >
               Your trusted partner in electrical construction and maintenance, delivering superior quality and reliability.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
