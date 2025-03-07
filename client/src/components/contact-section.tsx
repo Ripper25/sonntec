@@ -24,23 +24,44 @@ export default function ContactSection() {
     }
   ];
 
-  return (
-    <section id="contact" className="py-24 relative overflow-hidden">
-      {/* Background with pattern and gradient */}
-      <div className="absolute inset-0">
-        <div 
-          style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80")',
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            width: '100%',
-            height: '100%'
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background/90" />
-        </div>
+  const AnimatedBackground = () => (
+    <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute w-full h-full">
+        {[...Array(8)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute bg-gradient-to-br from-primary/20 via-primary/10 to-transparent"
+            style={{
+              width: Math.random() * 800 + 400,
+              height: Math.random() * 800 + 400,
+              borderRadius: '40%',
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              filter: 'blur(80px)',
+            }}
+            animate={{
+              x: [0, Math.random() * 200 - 100],
+              y: [0, Math.random() * 200 - 100],
+              rotate: [0, 360],
+              scale: [0.8, 1.2, 0.8],
+              opacity: [0.2, 0.4, 0.2],
+            }}
+            transition={{
+              duration: Math.random() * 25 + 20,
+              repeat: Infinity,
+              ease: "linear",
+              delay: Math.random() * 5,
+            }}
+          />
+        ))}
       </div>
+    </div>
+  );
+
+  return (
+    <section id="contact" className="py-24 relative overflow-hidden bg-background">
+      {/* Animated Background */}
+      <AnimatedBackground />
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -70,9 +91,13 @@ export default function ContactSection() {
                   {/* Decorative circle behind icon */}
                   <div className="absolute top-6 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-primary/10 -z-10" />
 
-                  <div className="text-primary mb-6 flex justify-center transform transition-transform duration-300 hover:scale-110">
+                  <motion.div 
+                    className="text-primary mb-6 flex justify-center"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
                     {contact.icon}
-                  </div>
+                  </motion.div>
 
                   <h3 className="text-xl font-semibold mb-4">{contact.title}</h3>
                   {contact.info.map((line, i) => (
