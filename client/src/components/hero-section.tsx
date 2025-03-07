@@ -2,9 +2,20 @@ import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function HeroSection() {
   const [, navigate] = useLocation();
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.pageYOffset);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
@@ -17,7 +28,9 @@ export default function HeroSection() {
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             width: '100%',
-            height: '100%'
+            height: '100%',
+            transform: `translate3d(0, ${scrollPosition * 0.5}px, 0)`,
+            transition: 'transform 0.1s linear'
           }}
         >
           <div className="absolute inset-0 bg-black/40" />
