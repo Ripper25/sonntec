@@ -104,12 +104,49 @@ const markets = [
   }
 ];
 
+const BackgroundAnimation = () => {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+      <div className="absolute w-full h-full">
+        {[...Array(15)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute bg-gradient-to-br from-primary/10 via-primary/5 to-transparent"
+            style={{
+              width: Math.random() * 400 + 200,
+              height: Math.random() * 400 + 200,
+              borderRadius: '40%',
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              filter: 'blur(40px)',
+            }}
+            animate={{
+              x: [0, Math.random() * 100 - 50],
+              y: [0, Math.random() * 100 - 50],
+              rotate: [0, 360],
+              scale: [0.8, 1.2, 0.8],
+              opacity: [0.3, 0.5, 0.3],
+            }}
+            transition={{
+              duration: Math.random() * 20 + 15,
+              repeat: Infinity,
+              ease: "linear",
+              delay: Math.random() * 5,
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 export default function Markets() {
   const [, navigate] = useLocation();
 
   return (
-    <div className="min-h-screen bg-background pt-20">
-      <div className="container mx-auto px-4 py-8">
+    <div className="min-h-screen bg-background pt-20 relative overflow-hidden">
+      <BackgroundAnimation />
+      <div className="container mx-auto px-4 py-8 relative z-10">
         <Button
           variant="ghost"
           className="mb-8 gap-2"
@@ -139,7 +176,7 @@ export default function Markets() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="h-full">
+              <Card className="h-full backdrop-blur-sm bg-background/95 border-2 hover:border-primary/20 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                 <CardHeader>
                   <div className="flex items-center gap-4">
                     <div className="text-primary">{market.icon}</div>
