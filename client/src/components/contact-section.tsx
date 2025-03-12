@@ -13,7 +13,11 @@ export default function ContactSection() {
     {
       icon: <Mail className="h-8 w-8" />,
       title: "Email",
-      info: ["sonnteck@sonnteck.com", "support@sonnteck.com"],
+      info: [
+        "joegashande@sonnteck.com",
+        "sonnychikara@sonnteck.com",
+        "support@sonnteck.com"
+      ],
       subtitle: "Professional support response within 24hrs"
     },
     {
@@ -74,7 +78,7 @@ export default function ContactSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Get in Touch</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
