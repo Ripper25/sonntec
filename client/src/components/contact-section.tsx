@@ -13,7 +13,7 @@ export default function ContactSection() {
     {
       icon: <Mail className="h-8 w-8" />,
       title: "Email",
-      info: ["sonnyc@sonnteckprojects.co.zw"],
+      info: ["sonnteck@sonnteck.com", "support@sonnteck.com"],
       subtitle: "Professional support response within 24hrs"
     },
     {
