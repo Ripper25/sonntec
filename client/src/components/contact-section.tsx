@@ -19,7 +19,12 @@ export default function ContactSection() {
     {
       icon: <MapPin className="h-8 w-8" />,
       title: "Visit Us",
-      info: ["Harare, Zimbabwe"],
+      info: [
+        "128 Eddison Zvobgo",
+        "Cnr 4th Ave & Kenneth Kaunda",
+        "NRZ Building",
+        "Harare, Zimbabwe"
+      ],
       subtitle: "Our main office location"
     }
   ];
