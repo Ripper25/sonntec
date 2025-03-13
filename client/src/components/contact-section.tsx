@@ -5,13 +5,13 @@ import { Mail, Phone, MapPin } from "lucide-react";
 export default function ContactSection() {
   const contactInfo = [
     {
-      icon: <Phone className="h-8 w-8" />,
+      icon: <Phone className="h-12 w-12" />, // Increased icon size
       title: "Call Us",
       info: ["+263774652930", "+263771589661"],
       subtitle: "Available 24/7 for your inquiries"
     },
     {
-      icon: <Mail className="h-8 w-8" />,
+      icon: <Mail className="h-12 w-12" />, // Increased icon size
       title: "Email",
       info: [
         "jay.kunaka@sonnteck.com",
@@ -21,7 +21,7 @@ export default function ContactSection() {
       subtitle: "Professional support response within 24hrs"
     },
     {
-      icon: <MapPin className="h-8 w-8" />,
+      icon: <MapPin className="h-12 w-12" />, // Increased icon size
       title: "Visit Us",
       info: [
         "128 Eddison Zvobgo",
@@ -86,7 +86,7 @@ export default function ContactSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto"> {/* Increased gap */}
           {contactInfo.map((contact, index) => (
             <motion.div
               key={index}
@@ -98,7 +98,7 @@ export default function ContactSection() {
               <Card className="h-full border-2 hover:border-primary/20 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 bg-background/80 backdrop-blur-sm">
                 <CardContent className="pt-8 pb-6 text-center relative">
                   {/* Increased size of decorative circle and improved centering */}
-                  <div className="absolute top-6 left-1/2 -translate-x-1/2 w-20 h-20 rounded-full bg-primary/10 -z-10 flex items-center justify-center" />
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-primary/10 -z-10 flex items-center justify-center" /> {/* Adjusted size and positioning */}
 
                   <motion.div 
                     className="relative flex items-center justify-center"
