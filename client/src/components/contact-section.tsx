@@ -14,7 +14,7 @@ export default function ContactSection() {
       icon: <Mail className="h-8 w-8" />,
       title: "Email",
       info: [
-        "joegashande@sonnteck.com",
+        "jay.kunaka@sonnteck.com",
         "sonnychikara@sonnteck.com",
         "support@sonnteck.com"
       ],
