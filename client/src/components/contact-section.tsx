@@ -97,18 +97,20 @@ export default function ContactSection() {
             >
               <Card className="h-full border-2 hover:border-primary/20 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 bg-background/80 backdrop-blur-sm">
                 <CardContent className="pt-8 pb-6 text-center relative">
-                  {/* Decorative circle behind icon */}
-                  <div className="absolute top-6 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-primary/10 -z-10" />
+                  {/* Increased size of decorative circle and improved centering */}
+                  <div className="absolute top-6 left-1/2 -translate-x-1/2 w-20 h-20 rounded-full bg-primary/10 -z-10 flex items-center justify-center" />
 
                   <motion.div 
-                    className="text-primary mb-6 flex justify-center"
+                    className="relative flex items-center justify-center"
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   >
-                    {contact.icon}
+                    <div className="text-primary">
+                      {contact.icon}
+                    </div>
                   </motion.div>
 
-                  <h3 className="text-xl font-semibold mb-4">{contact.title}</h3>
+                  <h3 className="text-xl font-semibold mb-4 mt-6">{contact.title}</h3>
                   {contact.info.map((line, i) => (
                     <p key={i} className="text-foreground font-medium mb-1">
                       {line}
