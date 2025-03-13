@@ -5,13 +5,13 @@ import { Mail, Phone, MapPin } from "lucide-react";
 export default function ContactSection() {
   const contactInfo = [
     {
-      icon: <Phone className="h-14 w-14" />,
+      icon: <Phone className="h-4 w-4" />,
       title: "Call Us",
       info: ["+263774652930", "+263771589661"],
       subtitle: "Available 24/7 for your inquiries"
     },
     {
-      icon: <Mail className="h-14 w-14" />,
+      icon: <Mail className="h-4 w-4" />,
       title: "Email",
       info: [
         "jay.kunaka@sonnteck.com",
@@ -21,7 +21,7 @@ export default function ContactSection() {
       subtitle: "Professional support response within 24hrs"
     },
     {
-      icon: <MapPin className="h-14 w-14" />,
+      icon: <MapPin className="h-4 w-4" />,
       title: "Visit Us",
       info: [
         "128 Eddison Zvobgo",
@@ -59,7 +59,7 @@ export default function ContactSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Card className="h-full border-2 hover:border-primary/20 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                <CardContent className="pt-8 pb-6 text-center relative">
+                <CardContent className="pt-6">
                   <div className="text-primary mb-4">
                     {contact.icon}
                   </div>
