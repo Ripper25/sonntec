@@ -57,8 +57,26 @@ export default function ContactSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="relative group"
             >
-              <Card className="h-full border-2 hover:border-primary/20 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+              {/* Animated Glow Effect */}
+              <motion.div
+                className="absolute -inset-0.5 bg-gradient-to-r from-primary/50 via-primary/30 to-primary/50 rounded-lg blur opacity-30 group-hover:opacity-100 transition duration-1000"
+                animate={{
+                  background: [
+                    "linear-gradient(to right, rgba(14, 165, 233, 0.5), rgba(14, 165, 233, 0.3), rgba(14, 165, 233, 0.5))",
+                    "linear-gradient(to right, rgba(14, 165, 233, 0.5), rgba(14, 165, 233, 0.8), rgba(14, 165, 233, 0.5))",
+                    "linear-gradient(to right, rgba(14, 165, 233, 0.5), rgba(14, 165, 233, 0.3), rgba(14, 165, 233, 0.5))"
+                  ],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+              />
+
+              <Card className="relative h-full border-2 hover:border-primary/20 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 bg-background">
                 <CardContent className="pt-6">
                   <div className="text-primary mb-4">
                     {contact.icon}
