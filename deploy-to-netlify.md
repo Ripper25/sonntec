@@ -6,10 +6,21 @@ Follow these steps to deploy your application to Netlify:
 2. Sign in or create an account
 3. Click on "Add new site" > "Import an existing project"
 4. Choose "Deploy manually" option
-5. Drag and drop the `dist` folder from your local machine to the designated area
+5. Drag and drop the `dist/public` folder from your local machine to the designated area
 6. Wait for the upload to complete
 7. Your site will be deployed with a random subdomain (e.g., random-name.netlify.app)
 8. You can customize the subdomain in the site settings
+
+## Important Configuration
+
+If you encounter a "Page not found" error, make sure to configure Netlify redirects:
+
+1. Go to Site settings > Build & deploy > Continuous deployment
+2. Under "Build settings", make sure the publish directory is set to `dist/public`
+3. Go to Site settings > Build & deploy > Post processing > Asset optimization
+4. Disable asset optimization if you encounter issues
+5. Go to Site settings > Build & deploy > Post processing > Redirects
+6. Add a redirect rule: from `/*` to `/index.html` with status code `200`
 
 ## Alternative: Connect to GitHub Repository
 
